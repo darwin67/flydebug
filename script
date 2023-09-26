@@ -1,0 +1,12 @@
+#!/bin/bash
+
+random_string=$(head -c 1000 /dev/urandom | base64)
+desired_size=25
+
+result=""
+
+for ((i=0; i<$desired_size; i++)); do
+    result="$result$random_string"
+done
+
+echo $result
